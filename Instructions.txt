@@ -1,0 +1,60 @@
+This instructions are written considering that you are using Ubuntu as your primary OS.
+
+# Install the Components from the Ubuntu Repositories to use PostgreSQL
+
+Our first step will be to install all of the pieces needed from the repositories. The following apt commands will get you the packages you need:
+
+sudo apt-get update
+sudo apt-get install python-pip python-dev libpq-dev postgresql postgresql-contrib
+
+Afterwards, we need to install Django and the Django Rest framework plus some additional packages. Run the following pip commands:
+
+pip install Django=1.11.10
+pip install djangorestframework
+pip install markdown       # Markdown support for the browsable API.
+pip install django-filter
+pip install psycopg2
+
+With the installation out of the way, we can move on to create the database and database user.
+
+# Create a Database and Database User
+
+By default, Postgres uses an authentication scheme called "peer authentication" for local connections. Basically, this means that if the user's operating system username matches a valid Postgres username, that user can login with no further authentication.
+
+During the Postgres installation, an operating system user named postgres was created to correspond to the postgres PostgreSQL administrative user. In a terminal we write:
+
+sudo -u postgres psql
+
+Now, one by one write the followings commands. Remember to end all commands at an SQL prompt with a semicolon.
+This would create the standalone database and grant the privileges:
+
+CREATE ROLE demodb WITH LOGIN PASSWORD 'demodb' CREATEDB;
+CREATE DATABASE demodb;
+GRANT ALL PRIVILEGES ON DATABASE demodb TO demodb;
+
+Remember to end all commands at an SQL prompt with a semicolon.
+
+Exit the postgres user's shell session with:
+
+\q
+
+# Run the server
+
+Before running the server we need to make the migrations to the database. Go to the folder /mysite in the repository, open a terminal and write:
+
+python manage.py makemigrations
+python manage.py migrate
+
+Now let's create a superuser:
+
+python manage.py createsuperuser
+
+Finally, to run the server:
+
+python manage.py runserver
+
+With the previous command, you can use the server. In a web browser write http://127.0.0.1:8000/admin to go to the login page and enter with the superuser you just created.
+
+
+
+
