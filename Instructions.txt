@@ -9,7 +9,7 @@ sudo apt-get install python-pip python-dev libpq-dev postgresql postgresql-contr
 
 Afterwards, we need to install Django and the Django Rest framework plus some additional packages. Run the following pip commands:
 
-pip install Django=1.11.10
+pip install Django==1.11.10
 pip install djangorestframework
 pip install markdown       # Markdown support for the browsable API.
 pip install django-filter
