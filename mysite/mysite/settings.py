@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'multimedia.apps.MultimediaConfig',
     'news.apps.NewsConfig',
     'schedule.apps.ScheduleConfig',
     'django.contrib.admin',
