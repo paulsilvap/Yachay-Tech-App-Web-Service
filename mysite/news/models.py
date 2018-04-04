@@ -3,9 +3,10 @@ import datetime
 from django.db import models
 from django.utils import timezone
 
-# Create your models here.
+#  Create your models here.
 class New(models.Model):
     title = models.CharField(max_length=200)
+    #dont forget use the max length
     pub_date = models.DateTimeField('date published')
     description = models.TextField()
     def __str__(self):
