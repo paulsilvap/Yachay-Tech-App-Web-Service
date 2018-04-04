@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^schedule/', include('schedule.urls')),
     url(r'', include('news.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^events/', include('events.urls')),
 ]
