@@ -8,3 +8,7 @@ router.register(r'news', views.NewViewSet)
 urlpatterns = [
     url(r'^', include(router.urls)),
 ]
+
+#urlpatterns = [
+#    url(r'^$', views.NewSearchListView, name='search'),
+#]
