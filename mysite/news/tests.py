@@ -2,6 +2,9 @@ from django.test import TestCase
 from  django.utils  import  unittest
 #importo clase de models.py
 from .models import New
+import datetime
+
+from django.utils import timezone
 
 class New(models.Model):
     title = models.CharField(max_length=200)
@@ -40,3 +43,11 @@ class MaxLengthTest(unittest.TestCase):
             new_args[field] = "X" * 200  # a value longer than any of the default fields could hold.
             p = New.objects.create(**new_args)
             self.assertEqual(getattr(p, field), ("X" * 200))
+
+
+class QuestionModelTests(unittest.TestCase):
+
+    def test_was_published_recently(self):
+        time = timezone.now() + datetime.timedelta(days=30)
+        question = New(pub_date=time)
+        self.assertIs(question.was_published_recently(), False)
