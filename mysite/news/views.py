@@ -7,7 +7,7 @@ from .models import New
 from .serializers import NewsSerializer
 from rest_framework import viewsets
 
-# Create your views here.
+#  Create your views here.
 
 class NewViewSet(viewsets.ModelViewSet):
     queryset = New.objects.all()
