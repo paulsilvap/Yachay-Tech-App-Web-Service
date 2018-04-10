@@ -2,7 +2,7 @@ import datetime
 
 from django.db import models
 from django.utils import timezone
-f#rom polls.models import Question
+#from polls.models import Question
 
 #  Create your models here.
 class New(models.Model):
