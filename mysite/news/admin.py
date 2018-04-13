@@ -9,7 +9,7 @@ from .models import New
 #  admin.site.register(Question, QuestionAdmin)
 
 class NewAdmin(admin.ModelAdmin):
-    fields = ['pub_date', 'title','description']
-    list_display = ('title', 'pub_date', 'description')
+    fields = ['pub_date', 'title','summary','description']
+    list_display = ('title', 'pub_date','summary', 'description')
 
 admin.site.register(New, NewAdmin)
