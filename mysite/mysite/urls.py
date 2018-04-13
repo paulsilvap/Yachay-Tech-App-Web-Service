@@ -22,3 +22,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'multimedia/', include('multimedia.urls')),
 ]
+
+#urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -7,7 +7,7 @@ from django.utils import timezone
 #  Create your models here.
 class New(models.Model):
     title = models.CharField(max_length=200)
-    #image = models.FileField(upload_to='news/')
+    image = models.FileField(upload_to='images', default = 'null')
     pub_date = models.DateTimeField('date published')
     summary = models.CharField(max_length=300)
     description = models.TextField()

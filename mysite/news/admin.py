@@ -1,15 +1,8 @@
 from django.contrib import admin
 from .models import New
 
-# Register your models here.
-
-# class QuestionAdmin(admin.ModelAdmin):
-#     fields = ['pub_date', 'question_text']
-
-#  admin.site.register(Question, QuestionAdmin)
-
 class NewAdmin(admin.ModelAdmin):
-    fields = ['pub_date', 'title','summary','description']
-    list_display = ('title', 'pub_date','summary', 'description')
+    fields = ['pub_date', 'title','summary','description','image']
+    list_display = ('title', 'pub_date','summary', 'description','image')
 
 admin.site.register(New, NewAdmin)
