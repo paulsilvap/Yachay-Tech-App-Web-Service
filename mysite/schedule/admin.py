@@ -1,10 +1,20 @@
 from django.contrib import admin
-from .models import Schedule
+from .models import Time, Stop, Schedule
 
 # Register your models here.
 
 class ScheduleAdmin(admin.ModelAdmin):
-    fields = ['name','subject','time','day']
-    list_display = ('name', 'subject', 'time', 'day')
+    fields = ['day','location','time']
+    list_display = ('day', 'location', 'time')
 
-admin.site.register(Schedule, ScheduleAdmin)
+class StopAdmin(admin.ModelAdmin):
+    fields = ['location','stop']
+    list_display = ('location','stop')
+
+class TimeAdmin(admin.ModelAdmin):
+    fields = ['time']
+    list_display = ('time',)
+
+admin.site.register(Schedule, ScheduleAdmin,)
+admin.site.register(Stop, StopAdmin)
+admin.site.register(Time, TimeAdmin)

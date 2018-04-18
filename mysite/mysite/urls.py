@@ -20,6 +20,6 @@ urlpatterns = [
     url(r'^schedule/', include('schedule.urls')),
     #url(r'^login/$', include('django.contrib.auth.views.login')),
     url(r'^', include('news.urls')),
-    url(r'^stop/', include('stops.urls')),
+    #url(r'^stop/', include('stops.urls')),
     url(r'^admin/', admin.site.urls),
 ]

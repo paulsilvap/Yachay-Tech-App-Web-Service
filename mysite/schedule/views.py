@@ -6,7 +6,7 @@ from rest_framework.parsers import JSONParser
 from .models import Schedule
 from .serializers import ScheduleSerializer
 
-# Create your views here.
+#Create your views here.
 
 @csrf_exempt
 def schedule_list(request):
