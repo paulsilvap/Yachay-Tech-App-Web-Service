@@ -4,13 +4,13 @@ from __future__ import unicode_literals
 
 from django.db import migrations, models
 import django.db.models.deletion
-import schedule.myFields
+import bus.myFields
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('schedule', '0007_time'),
+        ('bus', '0007_time'),
     ]
 
     operations = [
@@ -18,9 +18,9 @@ class Migration(migrations.Migration):
             name='Schedule',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('day', schedule.myFields.DayOfTheWeekField(choices=[('1', 'Monday'), ('2', 'Tuesday'), ('3', 'Wednesday'), ('4', 'Thursday'), ('5', 'Friday'), ('6', 'Saturday'), ('7', 'Sunday')], max_length=1)),
+                ('day', bus.myFields.DayOfTheWeekField(choices=[('1', 'Monday'), ('2', 'Tuesday'), ('3', 'Wednesday'), ('4', 'Thursday'), ('5', 'Friday'), ('6', 'Saturday'), ('7', 'Sunday')], max_length=1)),
                 ('location', models.CharField(max_length=200)),
-                ('time', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='schedule.Time')),
+                ('time', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='bus.Time')),
             ],
             options={
                 'ordering': ('day',),

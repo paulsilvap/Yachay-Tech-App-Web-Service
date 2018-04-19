@@ -10,6 +10,9 @@ class Time(models.Model):
     def __str__(self):
         return str(self.time)
 
+    # class Meta:
+    #     db_table = 'schedule_time'
+
 class Schedule(models.Model):
     DAYS_OF_THE_WEEK = (
         ('M','Monday'),
@@ -32,8 +35,9 @@ class Schedule(models.Model):
     # def __str__(self):
     #     return str(self.time)
 
-    class Meta:
-        ordering = ('day',)
+    # class Meta:
+    #     ordering = ('day',)
+        # db_table = 'schedule_schedule'
 
 class Stop(models.Model):
     location = models.ForeignKey(Schedule)
@@ -43,6 +47,9 @@ class Stop(models.Model):
         return str(self.location)
     def __str__(self):
         return self.stop
+
+    # class Meta:
+    #     db_table = 'schedule_stop'
     
 
 

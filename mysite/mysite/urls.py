@@ -17,7 +17,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^schedule/', include('schedule.urls')),
+    url(r'^schedule/', include('bus.urls')),
     #url(r'^login/$', include('django.contrib.auth.views.login')),
     url(r'^', include('news.urls')),
     #url(r'^stop/', include('stops.urls')),

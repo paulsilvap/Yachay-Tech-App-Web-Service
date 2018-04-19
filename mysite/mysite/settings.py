@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'news.apps.NewsConfig',
-    'schedule.apps.ScheduleConfig',
+    'bus.apps.BusConfig',
     #'stops.apps.StopsConfig',
     'django.contrib.admin',
     'django.contrib.auth',

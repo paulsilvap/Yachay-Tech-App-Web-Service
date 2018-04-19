@@ -9,7 +9,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('schedule', '0008_schedule'),
+        ('bus', '0008_schedule'),
     ]
 
     operations = [
@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('stop', models.CharField(max_length=200)),
-                ('location', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='schedule.Schedule')),
+                ('location', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='bus.Schedule')),
             ],
         ),
     ]
