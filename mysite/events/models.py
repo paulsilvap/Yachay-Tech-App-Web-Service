@@ -15,9 +15,6 @@ class Event(models.Model):
         return self.description
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
-        
- #  def __file__(self):
- #      return self.image
 
     class Meta:
         ordering = ('pub_date',)

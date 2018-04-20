@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^news/', include('news.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'multimedia/', include('multimedia.urls')),
+    url(r'^events/', include('events.urls')),
 #    url(r'media/', include('media.urls'),)
 ]
 
