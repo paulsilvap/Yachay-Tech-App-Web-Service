@@ -2,7 +2,6 @@ import datetime
 import os
 from django.db import models
 from django.utils import timezone
-#from polls.models import Question
 
 #  Create your models here.
 class New(models.Model):
@@ -11,6 +10,7 @@ class New(models.Model):
     pub_date = models.DateTimeField('date published')
     summary = models.CharField(max_length=300)
     description = models.TextField()
+    objects = NewSearchListView()
     def __str__(self):
         return self.description
     def __str__(self):
@@ -23,3 +23,5 @@ class New(models.Model):
 
     class Meta:
         ordering = ('pub_date',)
+
+    

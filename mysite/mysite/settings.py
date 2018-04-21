@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'multimedia.apps.MultimediaConfig',
     'news.apps.NewsConfig',
-    'schedule.apps.ScheduleConfig',
+    'bus.apps.BusConfig',
     'events.apps.EventsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -144,5 +144,3 @@ STATIC_URL = '/static/'
 parent_dir = os.path.abspath(os.path.dirname(__file__) + '/..')
 MEDIA_ROOT = os.path.join(parent_dir, 'media/')
 MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(parent_dir,'multimedia/')
-# MEDIA_URL = '/multimedia/static/'

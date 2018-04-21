@@ -1,0 +1,13 @@
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+{% if not user.is_active %}
+<form method="post" action="{% url 'django.contrib.auth.views.login' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Login</button>
+  <input type="hidden" name="next" value="{% url 'django.contrib.auth.views.login' %}" />
+</form>
+{% else %}
+<p>You are logged in as <strong>{{ user.username }}</strong>.</p>
+{% endif %}
