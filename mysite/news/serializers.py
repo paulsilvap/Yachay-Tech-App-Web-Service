@@ -8,7 +8,7 @@ import datetime
 class NewsSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     title = serializers.CharField(required=True, max_length=200)
-    image = serializers.FileField(required='127.0.0.1:8000')
+    image = serializers.FileField()
     pub_date = serializers.DateTimeField(required=True)
     summary = serializers.CharField(required=True, max_length=300)
     description = serializers.CharField(style={'base_template': 'textarea.html'})

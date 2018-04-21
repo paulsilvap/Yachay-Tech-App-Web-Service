@@ -142,5 +142,5 @@ REST_FRAMEWORK = {
 STATIC_URL = '/static/'
 
 parent_dir = os.path.abspath(os.path.dirname(__file__) + '/..')
-MEDIA_ROOT = os.path.join(parent_dir, 'http://127.0.0.1:8000/media/')
+MEDIA_ROOT = os.path.join(parent_dir, '8000/media/')
 MEDIA_URL = '/media/'
