@@ -40,11 +40,8 @@ class Schedule(models.Model):
         # db_table = 'schedule_schedule'
 
 class Stop(models.Model):
-    location = models.ForeignKey(Schedule)
     stop = models.CharField(max_length=200)
 
-    def __str__(self):
-        return str(self.location)
     def __str__(self):
         return self.stop
 

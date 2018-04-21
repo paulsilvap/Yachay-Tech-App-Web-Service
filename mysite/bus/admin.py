@@ -8,8 +8,8 @@ class ScheduleAdmin(admin.ModelAdmin):
     list_display = ('day', 'location', 'time')
 
 class StopAdmin(admin.ModelAdmin):
-    fields = ['location','stop']
-    list_display = ('location','stop')
+    fields = ['stop']
+    list_display = ('stop',)
 
 class TimeAdmin(admin.ModelAdmin):
     fields = ['time']
