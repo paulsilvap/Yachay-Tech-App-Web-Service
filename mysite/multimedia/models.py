@@ -6,7 +6,7 @@ class Multimedia(models.Model):
     title = models.CharField(max_length=200,help_text="Enter the title")
     pub_date = models.DateTimeField('date published')
     description = models.TextField()
-    archivo= models.FileField(upload_to='multimedia/static/')#cambio
+    archivo= models.FileField(upload_to='multimedia')#cambio
     def __str__(self):
         return self.title
     def __str__(self):

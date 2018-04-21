@@ -20,5 +20,5 @@ def news_list(request):
     """
     if request.method == 'GET':
         new = New.objects.all()
-        serializer = NewsSerializer(new, many=True)
+        serializer = NewsSerializer(new, context={"request": request}, many=True)
         return JsonResponse(serializer.data, safe=False)

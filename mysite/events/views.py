@@ -9,5 +9,5 @@ def events_list(request):
     
     if request.method == 'GET':
         event = Event.objects.all()
-        serializer = EventsSerializer(event, many=True)
+        serializer = EventsSerializer(event, context={"request": request}, many=True)
         return JsonResponse(serializer.data, safe=False)

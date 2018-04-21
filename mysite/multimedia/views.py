@@ -15,5 +15,5 @@ def multimedia_list(request):
     """
     if request.method == 'GET':
         multi = Multimedia.objects.all()
-        serializer = MultiSerializer(multi, many=True)
+        serializer = MultiSerializer(multi, context={"request": request}, many=True)
         return JsonResponse(serializer.data, safe=False)
