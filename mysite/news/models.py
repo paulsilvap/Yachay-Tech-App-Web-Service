@@ -10,7 +10,8 @@ class New(models.Model):
     pub_date = models.DateTimeField('date published')
     summary = models.CharField(max_length=300)
     description = models.TextField()
-    objects = NewSearchListView()
+    #objects = NewSearchListView()
+    
     def __str__(self):
         return self.description
     def __str__(self):

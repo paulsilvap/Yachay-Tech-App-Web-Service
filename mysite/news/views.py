@@ -15,9 +15,6 @@ from rest_framework import viewsets
 #  Create your views here.
 
 #class NewSearchListView(models.Manager):
-    """
-    Display a News List page filtered by the search query.
-    """
     #model = New
     #paginate_by = 10
 
