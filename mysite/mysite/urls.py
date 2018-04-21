@@ -15,11 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^schedule/', include('bus.urls')),
     #url(r'^login/$', include('django.contrib.auth.views.login')),
-    url(r'^', include('news.urls')),
-    #url(r'^stop/', include('stops.urls')),
+    url(r'^news/', include('news.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^events/', include('events.urls')),
+    url(r'^multimedia/', include('multimedia.urls'))
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
