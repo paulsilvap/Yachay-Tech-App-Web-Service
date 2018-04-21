@@ -1,9 +1,10 @@
 from django.contrib import admin
+from .models import Multimedia
 
-from .models import File
+# Register your models here.
 
-class NewAdmin(admin.ModelAdmin):
-    fields = ['name', 'pub_date','image_description']
-    list_display = ('name', 'pub_date', 'image_description')
+class MultimediaAdmin(admin.ModelAdmin):
+    fields = ['pub_date', 'title','description','archivo']
+    list_display = ('title', 'pub_date', 'description','archivo')
 
-admin.site.register(File, NewAdmin)
+admin.site.register(Multimedia, MultimediaAdmin)

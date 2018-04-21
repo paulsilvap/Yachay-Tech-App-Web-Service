@@ -1,4 +1,3 @@
-from django.test import TestCase
 from  django.utils  import  unittest
 #importo clase de models.py
 from .models import New
