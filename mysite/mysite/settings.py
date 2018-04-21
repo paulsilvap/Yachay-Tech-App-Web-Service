@@ -32,9 +32,9 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'multimedia.apps.MultimediaConfig',
-    'events.apps.EventsConfig',
     'news.apps.NewsConfig',
     'schedule.apps.ScheduleConfig',
+    'events.apps.EventsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -141,9 +141,8 @@ REST_FRAMEWORK = {
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
- 
-#cambio
-#PARA MULTIMEDIA
-parent_dir = os.path.abspath(os.path.dirname(__file__)+'/..')
-MEDIA_ROOT = os.path.join(parent_dir,'multimedia/')
-MEDIA_URL = '/multimedia/static/'
+parent_dir = os.path.abspath(os.path.dirname(__file__) + '/..')
+MEDIA_ROOT = os.path.join(parent_dir, 'http://127.0.0.1:8000/media/')
+MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(parent_dir,'multimedia/')
+# MEDIA_URL = '/multimedia/static/'
